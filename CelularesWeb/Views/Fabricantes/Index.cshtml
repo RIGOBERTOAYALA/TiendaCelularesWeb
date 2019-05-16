@@ -1,0 +1,37 @@
+﻿@model List<CelularesWeb.Models.DTOs.Fabricantes_dto >
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Fabricantes</h2>
+    < div class = "row">
+    <div class="col-md-12">
+        <input type="button" class="btn btn-primary" value="nuevo"
+               onclick="document.location.href= '@Url.Content("~/Fabricantes/add")'"/>
+
+
+    </div>
+    
+    <br />
+    <div class="="row" >
+        <div class="col-lg-12">
+            <table class="table-bordered">
+                   <tr>
+                       <th>id Fabricante</th>
+                       <th> Nom Fabricante </th>
+                       <th> pais fabricante </th>
+                   </tr>
+            @foreach (var oFabricante in Model)
+            {
+                   <tr>
+                       <th>@oFabricante.IdFabricante</th>
+                       <th>@oFabricante.NomFabricante</th>
+                       <th>@oFabricante.PaisFabricante</th>
+                   </tr>}
+            </table> 
+        </div>
+
+    </div>
+
+
+

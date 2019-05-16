@@ -8,6 +8,8 @@ namespace CelularesWeb
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            //habilitar el filtro de sesion
+           // filters.Add(new Filters.Verificar_Session());
         }
     }
 }
