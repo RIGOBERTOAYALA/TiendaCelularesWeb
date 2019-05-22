@@ -1,0 +1,29 @@
+﻿@model CelularesWeb.Models.DTOs.Fabricantes_dto
+@{
+    ViewBag.Title = "Gestionar fabricante";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <! --Inicio del formulario de insercion de datos params(1->Action,2->controller,3->Method,4->Params)
+        -->
+        @using (Html.BeginForm("Add", "Fabricantes", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.LabelFor(f => f.Nom)
+            @Html.TextBoxFor(f => f.NomFabricante, new { @class = "form-control"})
+
+            @Html.LabelFor(f => f.PaisFabricante)
+            @Html.DropDownListFor(f => Model.PaisFabricante, new SelectList(Model.lstPaises,"ID_DOMINIO",I "VLR_DOMINIO"),
+            HtmlAttributes: new {@class = "form-control",id="pais")}
+
+            <div style="text-align:right">
+                <input type="submit" class="btn btn-success" value="Guardar"
+            </div>
+
+
+                    }
+    </div>
+</div>
+
